@@ -18,7 +18,7 @@ export default function HeroSection() {
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800)'
+            backgroundImage: 'url(/images/hero/header.png)'
           }}
         />
       </div>
@@ -69,7 +69,7 @@ export default function HeroSection() {
                 {/* Overlay Box */}
                 <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-6 rounded-b-lg">
                   <p className="text-sm leading-relaxed">
-                    CS IS A FLEXIBLE MODERN WORKSPACES ARE DESIGNED TO INSPIRE CREATIVITY PRODUCTIVITY. 
+                    COHOPERS IS A FLEXIBLE MODERN WORKSPACES ARE DESIGNED TO INSPIRE CREATIVITY PRODUCTIVITY. 
                     WHETHER YOU'RE A FREELANCER OR ESTABLISHED BUSINESS OWNER, YOU'LL FIND MANY WAYS 
                     YOU'LL FIND TO SUCCESS IN OUR COWORKING SPACES.
                   </p>

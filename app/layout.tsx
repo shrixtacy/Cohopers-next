@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CoWork - Premium Coworking Spaces',
+  title: 'Cohopers - Premium Coworking Spaces',
   description: 'Join a thriving community of entrepreneurs, freelancers, and innovators in our premium coworking spaces. Modern amenities, flexible plans, and networking opportunities.',
 };
 

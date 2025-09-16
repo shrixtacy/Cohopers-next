@@ -3,7 +3,60 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
+const pricingPlans = [
+  {
+    title: 'Single Seat',
+    subtitle: '(Open desk)',
+    capacity: '1 Seater',
+    price: '₹4.5k + GST',
+    period: 'Per Month',
+    features: [
+      '24/7 access',
+      'Conference room facility',
+      '300 MBPS internet',
+      'Price includes electricity, AC, Office boy'
+    ],
+    image: '/images/workspaces/open-desk.png',
+    popular: true
+  },
+  {
+    title: 'Executive Cabin',
+    subtitle: '(3 Seater)',
+    capacity: '3 Seater including 1 Boss seat',
+    price: '₹16k + GST',
+    period: 'Per Month',
+    features: [
+      '24/7 access',
+      'Conference room facility',
+      '300 MBPS internet',
+      'Price includes electricity, AC, Office boy'
+    ],
+    image: '/images/workspaces/meeting-room.png',
+    popular: false
+  },
+  {
+    title: 'Window Side Executive Cabin',
+    subtitle: '(4 seater)',
+    capacity: '4 Seater including 1 Boss seat',
+    price: '₹18k + GST',
+    period: 'Per Month',
+    features: [
+      '24/7 access',
+      'Conference room facility',
+      '300 MBPS internet',
+      'Price includes electricity, AC, Office boy'
+    ],
+    image: '/images/workspaces/private office.png',
+    popular: false
+  }
+];
+
 export default function PricingSection() {
+  const handleViewAllPricing = () => {
+    // Navigate to pricing page
+    window.location.href = '/pricing';
+  };
+
   return (
     <section id="pricing" className="section-padding bg-white">
       <div className="container-custom">
@@ -19,52 +72,86 @@ export default function PricingSection() {
             Our New Location Is Now Open
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-black">
-            PRICING
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-black">
+              PRICING
+            </h2>
+            <motion.button
+              onClick={handleViewAllPricing}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 bg-[#004efb] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0038cc] transition-colors"
+            >
+              View All Pricing
+              <ArrowRight size={20} />
+            </motion.button>
+          </div>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Dedicated Desk Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-[#004efb] p-8 space-y-6 relative group cursor-pointer"
-          >
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4">DEDICATED DESK</h3>
-                <div className="text-4xl font-bold text-white">$299.00</div>
-              </div>
-              <ArrowRight className="w-6 h-6 text-white group-hover:translate-x-2 transition-transform duration-300" />
-            </div>
-          </motion.div>
-
-          {/* Email for Team Box Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-[#00ffe0] p-8 space-y-6 relative group cursor-pointer"
-          >
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-2xl font-bold text-black mb-4">EMAIL FOR TEAM BOX</h3>
-                <div className="space-y-2">
-                  <div className="text-2xl font-bold text-black line-through opacity-60">$120.00</div>
-                  <div className="text-4xl font-bold text-black">$299.00</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {pricingPlans.map((plan, index) => (
+            <motion.div
+              key={plan.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className={`relative group cursor-pointer rounded-lg overflow-hidden ${
+                plan.popular ? 'ring-2 ring-[#004efb]' : 'bg-white border border-gray-200'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute top-0 right-0 bg-[#004efb] text-white px-4 py-1 text-sm font-semibold z-10">
+                  Most Popular
                 </div>
-                <p className="text-gray-700 text-sm mt-4">
-                  The amenities, such as high-speed internet, printing, keep your productivity.
-                </p>
+              )}
+              
+              <div className="p-6 space-y-6">
+                {/* Image */}
+                <div className="relative h-48 rounded-lg overflow-hidden">
+                  <div
+                    className="w-full h-full bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${plan.image})`
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-1">{plan.title}</h3>
+                    <p className="text-gray-600 text-sm mb-2">{plan.subtitle}</p>
+                    <p className="text-gray-700 text-sm">{plan.capacity}</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="text-3xl font-bold text-[#004efb]">{plan.price}</div>
+                    <div className="text-gray-600 text-sm">{plan.period}</div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-[#004efb] rounded-full"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-[#004efb] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0038cc] transition-colors"
+                  >
+                    Get Started
+                  </motion.button>
+                </div>
               </div>
-              <ArrowRight className="w-6 h-6 text-black group-hover:translate-x-2 transition-transform duration-300" />
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

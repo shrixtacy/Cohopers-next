@@ -8,21 +8,32 @@ import { navItems } from '@/lib/constants';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    // Set initial scroll state
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/')) {
+      // External page navigation
+      window.location.href = href;
+    } else {
+      // Internal section navigation
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -33,7 +44,7 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <span>help@cs.com</span>
+              <span>help@cohopers.com</span>
             </div>
             <div className="flex items-center gap-4">
               <span>+92 000 333 9999</span>
@@ -47,7 +58,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-lg' : 'bg-white'
+          mounted && scrolled ? 'bg-white shadow-lg' : 'bg-white'
         }`}
       >
         <div className="container-custom">
@@ -62,7 +73,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-[#004efb] flex items-center justify-center">
                 <span className="text-white font-bold text-xl">C</span>
               </div>
-              <span className="text-black font-bold text-2xl">S</span>
+              <span className="text-black font-bold text-2xl">ohopers</span>
             </div>
             </motion.div>
 

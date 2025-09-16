@@ -23,7 +23,7 @@ export default function FooterSection() {
           >
             <div className="flex items-center gap-2">
               <ArrowRight className="w-5 h-5 text-[#00ffe0]" />
-              <span className="text-white">help@cs.com</span>
+              <span className="text-white">help@cohopers.com</span>
             </div>
           </motion.div>
 
@@ -116,8 +116,8 @@ export default function FooterSection() {
             <div className="w-8 h-8 bg-[#004efb] flex items-center justify-center">
               <span className="text-white font-bold text-lg">C</span>
             </div>
-            <span className="text-white font-bold text-xl">S</span>
-            <span className="text-gray-400 text-sm ml-4">© 2024 CS. All rights reserved.</span>
+            <span className="text-white font-bold text-xl">ohopers</span>
+            <span className="text-gray-400 text-sm ml-4">© 2024 Cohopers. All rights reserved.</span>
           </div>
           
           <div className="flex space-x-4">

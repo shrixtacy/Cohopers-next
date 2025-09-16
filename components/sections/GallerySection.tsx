@@ -5,27 +5,27 @@ import { motion } from 'framer-motion';
 const workspaceTypes = [
   {
     title: 'MEETING',
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400',
+    image: '/images/gallery/cohopers3.jpg',
     description: 'Professional meeting spaces for collaboration'
   },
   {
     title: 'WORKSHOP',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+    image: '/images/gallery/Cohopers_1.jpeg',
     description: 'Creative workshop environments'
   },
   {
     title: 'TRAINING',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+    image: '/images/gallery/cohopers2.jpeg',
     description: 'Training and learning spaces'
   },
   {
     title: 'REST',
-    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+    image: '/images/gallery/co.jpeg',
     description: 'Relaxation and break areas'
   },
   {
     title: 'CONFERENCE HALL',
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+    image: '/images/gallery/cohopers3.jpg',
     description: 'Large conference and event spaces'
   }
 ];

@@ -33,16 +33,14 @@ export default function BlogEventsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            Our Latest News
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-black">
-            CHECK OUR UPCOMING EVENTS
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            Check our upcoming events
           </h2>
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+            Stay updated with our latest news, events, and community happenings.
+          </p>
         </motion.div>
 
         {/* Blog Posts Grid */}
@@ -53,34 +51,65 @@ export default function BlogEventsSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="group cursor-pointer"
+              whileHover={{ 
+                y: -10, 
+                scale: 1.03,
+                rotateY: 5,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="group cursor-pointer relative"
+              style={{ transformStyle: 'preserve-3d' }}
             >
-              <div className="relative overflow-hidden rounded-lg mb-6">
-                <div
-                  className="w-full h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+              <div className="relative overflow-hidden rounded-lg mb-6 shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                <motion.div
+                  className="w-full h-64 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${post.image})`
                   }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.4, ease: "easeOut" }
+                  }}
                 />
                 
-                {/* Date Badge */}
-                <div className="absolute top-4 left-4">
-                  <div className="badge-teal">
+                {/* Enhanced overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                  whileHover={{ 
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent, transparent)',
+                    transition: { duration: 0.3 }
+                  }}
+                />
+                
+                {/* Date Badge with enhanced animation */}
+                <motion.div 
+                  className="absolute top-4 left-4"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="badge-blue group-hover:bg-[#004efb] group-hover:scale-105 transition-all duration-300">
                     {post.date}
                   </div>
-                </div>
+                </motion.div>
               </div>
               
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-black group-hover:text-[#00ffe0] transition-colors duration-300">
+              <div className="space-y-4 p-2">
+                <motion.h3 
+                  className="text-lg font-semibold text-black group-hover:text-[#004efb] transition-colors duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {post.title}
-                </h3>
+                </motion.h3>
                 
-                <button className="btn-secondary group">
-                  READ MORE
+                <motion.button 
+                  className="btn-outline group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Read more
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </motion.button>
               </div>
             </motion.article>
           ))}

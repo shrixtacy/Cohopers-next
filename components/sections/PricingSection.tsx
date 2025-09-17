@@ -65,27 +65,14 @@ export default function PricingSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            Our New Location Is Now Open
-          </div>
-          
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-black">
-              PRICING
-            </h2>
-            <motion.button
-              onClick={handleViewAllPricing}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-[#004efb] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0038cc] transition-colors"
-            >
-              View All Pricing
-              <ArrowRight size={20} />
-            </motion.button>
-          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            Pricing
+          </h2>
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed mb-12">
+            Choose the perfect workspace solution for your needs. All plans include high-speed internet, 24/7 access, and access to our vibrant community.
+          </p>
         </motion.div>
 
         {/* Pricing Cards */}
@@ -96,9 +83,13 @@ export default function PricingSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className={`relative group cursor-pointer rounded-lg overflow-hidden ${
-                plan.popular ? 'ring-2 ring-[#004efb]' : 'bg-white border border-gray-200'
+              whileHover={{ 
+                scale: 1.05,
+                y: -10,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className={`relative group cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
+                plan.popular ? 'ring-2 ring-[#004efb] bg-gradient-to-br from-[#004efb]/5 to-white' : 'bg-white border border-gray-200'
               }`}
             >
               {plan.popular && (

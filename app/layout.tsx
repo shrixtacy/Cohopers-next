@@ -1,8 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
+import LenisProvider from '@/components/providers/LenisProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500', '600', '700']
+});
 
 export const metadata: Metadata = {
   title: 'Cohopers - Premium Coworking Spaces',
@@ -16,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} scroll-smooth`}>{children}</body>
+      <body className={`${spaceGrotesk.className}`}>
+        <LenisProvider>
+          {children}
+        </LenisProvider>
+      </body>
     </html>
   );
 }

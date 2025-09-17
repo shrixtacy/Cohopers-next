@@ -5,35 +5,25 @@ import { ArrowRight } from 'lucide-react';
 
 export default function FlexibleWorkspacesSection() {
   return (
-    <section className="section-padding bg-black text-white">
+    <section className="section-padding bg-white text-black">
       <div className="container-custom">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            Our New Location Is Now Open
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            OUR FLEXIBLE WORKSPACES ARE DESIGNED TO BE COMFORTABLE, SO YOU CAN FOCUS ON WHAT REALLY MATTERS -{' '}
-            <span className="text-[#00ffe0] underline decoration-[#00ffe0] decoration-4 underline-offset-4">
-              YOUR WORK
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            Our flexible workspaces are designed to be comfortable, so you can focus on what really matters —{' '}
+            <span className="text-black">
+              your work
             </span>
           </h2>
           
-          <div className="flex justify-between items-center mt-12">
-            <p className="text-gray-300 text-lg max-w-2xl">
-              Experience the perfect blend of productivity and comfort in our modern coworking spaces.
-            </p>
-            <div className="text-2xl font-bold text-[#00ffe0]">
-              +92 000 333 9999
-            </div>
-          </div>
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+            Experience the perfect blend of productivity and comfort in our modern coworking spaces.
+          </p>
         </motion.div>
 
         {/* Background Image */}
@@ -57,7 +47,7 @@ export default function FlexibleWorkspacesSection() {
               whileTap={{ scale: 0.95 }}
               className="btn-primary"
             >
-              BOOK TEST DAY
+              Book test day
               <ArrowRight size={16} />
             </motion.button>
           </div>

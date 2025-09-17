@@ -15,23 +15,21 @@ const solutions = [
 
 export default function WorkspaceSolutionsSection() {
   return (
-    <section className="section-padding bg-gray-100">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            Our New Location Is Now Open
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-black">
-            FLEXIBLE WORKSPACE SOLUTIONS
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            Flexible workspace solutions
           </h2>
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+            Everything you need to succeed in your work, all in one place.
+          </p>
         </motion.div>
 
         {/* Icon Grid */}
@@ -42,11 +40,34 @@ export default function WorkspaceSolutionsSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className="text-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+              whileHover={{ 
+                y: -10, 
+                scale: 1.05,
+                rotateY: 5,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="text-center space-y-4 p-8 bg-light-beige rounded-lg hover:bg-[#004efb] hover:text-white transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              style={{ transformStyle: 'preserve-3d' }}
             >
-              <div className="text-4xl mb-4">{solution.icon}</div>
-              <h3 className="text-sm font-semibold text-black uppercase tracking-wide">
+              {/* Background gradient on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-[#004efb]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              
+              <motion.div 
+                className="text-5xl mb-4 relative z-10"
+                whileHover={{ 
+                  scale: 1.2,
+                  rotate: 10,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                {solution.icon}
+              </motion.div>
+              <h3 className="text-base font-semibold text-black group-hover:text-white transition-colors duration-300 relative z-10">
                 {solution.title}
               </h3>
             </motion.div>

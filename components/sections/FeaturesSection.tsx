@@ -1,51 +1,79 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { features } from '@/lib/constants';
+
+const whyCohopersFeatures = [
+  {
+    icon: '🏠',
+    title: 'Interiors',
+    description: 'that feel like home, crafted for comfort and creativity. Think modern, professional fits.'
+  },
+  {
+    icon: '🔄',
+    title: 'Modular Spaces',
+    description: 'that flex with your needs whether you\'re a solo creator, a small team, or somewhere in between. Our tables all come on wheels to enable various event formats.'
+  },
+  {
+    icon: '✨',
+    title: 'Minimal',
+    description: 'lifestyle-led aesthetic that inspires clarity and calm.'
+  },
+  {
+    icon: '🌱',
+    title: 'Productivity Forward Design',
+    description: 'think natural light, plants, spaces that breathe and adapt to your needs & day.'
+  },
+  {
+    icon: '🤝',
+    title: 'Community',
+    description: 'built on sharing, skill building, and genuine support not just networking.'
+  },
+  {
+    icon: '☕',
+    title: 'Curations',
+    description: 'artisanal coffee, productivity focused food, healthy juices and smoothies, and pet-friendly access.'
+  }
+];
 
 export default function FeaturesSection() {
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="section-padding bg-blue-dark">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Everything You Need to{' '}
-            <span className="bg-gradient-to-r from-[#00ffe0] to-[#004efb] bg-clip-text text-transparent">
-              Succeed
-            </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            Why Cohopers
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our premium amenities and services are designed to boost your productivity and foster meaningful connections
+          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
+            We're not just another coworking space. At Cohopers, we're reimagining what it means to work in physical spaces by making it personal, flexible, and deeply human. Think of us as your second home — one with really good coffee and even better people.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {whyCohopersFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.01 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="text-center space-y-4"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 + 0.1 }}
-                className="text-4xl mb-4 bg-gradient-to-r from-[#00ffe0] to-[#004efb] w-16 h-16 rounded-full flex items-center justify-center"
+                className="text-6xl mb-6"
               >
                 {feature.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-white leading-relaxed text-base">
                 {feature.description}
               </p>
             </motion.div>

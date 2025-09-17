@@ -12,69 +12,88 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/images/hero/header.png)'
-          }}
-        />
-      </div>
-
+    <section id="home" className="relative min-h-screen flex items-center bg-light-beige">
       {/* Content Container */}
       <div className="relative z-10 w-full">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-            {/* Left Content */}
+          <div className="text-center space-y-12 py-20">
+            {/* Main Headline */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
+              className="space-y-6"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
-                CONNECT, COLLABORATE, AND GROW BUSINESS
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-black leading-tight">
+                Productivity-first coworking in India — a new way to{' '}
+                <span className="text-[#004efb]">Create</span>
+                <div className="w-1 h-12 bg-[#004efb] mx-auto mt-4"></div>
               </h1>
               
-              <div className="flex justify-start">
-                <motion.button
-                  onClick={handleCTAClick}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-8 py-4"
-                >
-                  BOOK TEST DAY
-                  <ArrowRight size={20} />
-                </motion.button>
-              </div>
+              <p className="text-lg md:text-xl lg:text-2xl text-black max-w-4xl mx-auto leading-relaxed">
+                Cohopers is building productivity-forward coworking spaces across India — and soon, the GCC — where professionals thrive in spaces designed for focus and growth.
+              </p>
             </motion.div>
 
-            {/* Right Content - Image with Overlay */}
+            {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
+              className="flex justify-center"
             >
-              <div className="relative">
+              <motion.button
+                onClick={handleCTAClick}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary"
+              >
+                Be first in line
+                <ArrowRight size={20} />
+              </motion.button>
+            </motion.div>
+
+            {/* Illustration/Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex justify-center mt-16"
+            >
+              <motion.div 
+                className="relative group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateY: 5,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                style={{ transformStyle: 'preserve-3d' }}
+              >
                 <div
-                  className="w-full h-96 lg:h-[500px] bg-cover bg-center rounded-lg"
+                  className="w-full max-w-4xl h-96 bg-cover bg-center rounded-lg shadow-2xl"
                   style={{
-                    backgroundImage: 'url(https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600)'
+                    backgroundImage: 'url(/images/hero/header.png)'
                   }}
                 />
                 
-                {/* Overlay Box */}
-                <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-6 rounded-b-lg">
-                  <p className="text-sm leading-relaxed">
-                    COHOPERS IS A FLEXIBLE MODERN WORKSPACES ARE DESIGNED TO INSPIRE CREATIVITY PRODUCTIVITY. 
-                    WHETHER YOU'RE A FREELANCER OR ESTABLISHED BUSINESS OWNER, YOU'LL FIND MANY WAYS 
-                    YOU'LL FIND TO SUCCESS IN OUR COWORKING SPACES.
-                  </p>
-                </div>
-              </div>
+                {/* Enhanced overlay with hover effect */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-lg"
+                  whileHover={{ 
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent, transparent)',
+                    transition: { duration: 0.3 }
+                  }}
+                />
+                
+                {/* Subtle border glow on hover */}
+                <motion.div
+                  className="absolute inset-0 rounded-lg border-2 border-transparent"
+                  whileHover={{
+                    borderColor: 'rgba(0, 78, 251, 0.3)',
+                    transition: { duration: 0.3 }
+                  }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function VirtualTourSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-light-beige">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -27,11 +27,11 @@ export default function VirtualTourSection() {
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#004efb] flex items-center justify-center">
+                <div className="w-12 h-12 bg-blue flex items-center justify-center">
                   <ArrowRight className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">TAKE A VIRTUAL TOUR</h3>
+                  <h3 className="text-2xl font-bold text-white">Take a virtual tour</h3>
                 </div>
               </div>
             </div>

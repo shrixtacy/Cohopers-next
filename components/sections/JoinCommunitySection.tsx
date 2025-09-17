@@ -5,84 +5,90 @@ import { ArrowRight } from 'lucide-react';
 
 export default function JoinCommunitySection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-light-beige">
       <div className="container-custom">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            Our New Location Is Now Open
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
-            JOIN A COMMUNITY OF INNOVATORS AND ENTREPRENEURS
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+            A culture that's different by design
           </h2>
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed mb-12">
+            At Cohopers, we do things differently. Inspired by modern organizations, our culture is built on trust, transparency, and radical collaboration. Here, you'll find:
+          </p>
         </motion.div>
 
-        {/* Three Column Layout */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Left Column - Light Beige */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gray-100 p-8 space-y-6"
-          >
-            <h3 className="text-2xl font-bold text-black">THE BEST LOCATION</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris.
+        {/* Bullet Points */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-4xl mx-auto space-y-8 mb-16"
+        >
+          <div className="flex items-start gap-6">
+            <div className="w-2 h-2 bg-blue rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-base text-black leading-relaxed">
+              <strong>No bosses, just leaders.</strong> We believe in self-management, where everyone has a voice and the freedom to act.
             </p>
-            <button className="btn-outline">
-              READ MORE
-              <ArrowRight size={16} />
-            </button>
-          </motion.div>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="w-2 h-2 bg-[#004efb] rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-base text-black leading-relaxed">
+              <strong>Emotional safety first.</strong> Vulnerability is celebrated, and feedback is honest, but always kind.
+            </p>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="w-2 h-2 bg-[#004efb] rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-base text-black leading-relaxed">
+              <strong>Purpose over profit.</strong> We exist to create spaces where people thrive, personally and professionally.
+            </p>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="w-2 h-2 bg-[#004efb] rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-base text-black leading-relaxed">
+              <strong>Community is everything.</strong> We're intentional about who joins, curating a collective of the curious, the kind, and the creative.
+            </p>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="w-2 h-2 bg-[#004efb] rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-base text-black leading-relaxed">
+              <strong>Continuous evolution.</strong> We learn, adapt, and grow together, because the best cultures are living, breathing things.
+            </p>
+          </div>
+        </motion.div>
 
-          {/* Middle Column - Light Grey */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gray-100 p-8 space-y-6"
-          >
-            <h3 className="text-2xl font-bold text-black">THE FEATURE LIST</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris.
-            </p>
-            <button className="btn-outline">
-              READ MORE
-              <ArrowRight size={16} />
-            </button>
-          </motion.div>
+        {/* Quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mb-16"
+        >
+          <blockquote className="text-lg md:text-xl text-black italic leading-relaxed max-w-4xl mx-auto">
+            "At Cohopers, culture isn't a poster on the wall, it's the way we show up, support each other, and build something bigger than ourselves."
+          </blockquote>
+        </motion.div>
 
-          {/* Right Column - Black */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-black p-8 space-y-6"
-          >
-            <h3 className="text-2xl font-bold text-white">SPACE FOR EVERYONE</h3>
-            <p className="text-gray-300 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris.
-            </p>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-3 transition-all duration-300 inline-flex items-center gap-2">
-              READ MORE
-              <ArrowRight size={16} />
-            </button>
-          </motion.div>
-        </div>
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center"
+        >
+          <button className="btn-primary">
+            About Us
+            <ArrowRight size={20} />
+          </button>
+        </motion.div>
       </div>
     </section>
   );

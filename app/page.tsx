@@ -1,6 +1,7 @@
 import Navbar from '@/components/navigation/Navbar';
 import HeroSection from '@/components/sections/HeroSection';
 import LogoCarousel from '@/components/sections/LogoCarousel';
+import ServicesFlowSection from '@/components/sections/ServicesFlowSection';
 import JoinCommunitySection from '@/components/sections/JoinCommunitySection';
 import FlexibleWorkspacesSection from '@/components/sections/FlexibleWorkspacesSection';
 import WorkspaceSolutionsSection from '@/components/sections/WorkspaceSolutionsSection';
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <LogoCarousel />
+      <ServicesFlowSection />
       <JoinCommunitySection />
       <FlexibleWorkspacesSection />
       <WorkspaceSolutionsSection />

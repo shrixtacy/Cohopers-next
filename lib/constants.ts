@@ -164,3 +164,16 @@ export const galleryItems: GalleryItem[] = [
     category: 'amenities'
   }
 ];
+
+// Contact Information
+export const contactInfo = {
+  company: 'Cohopers',
+  address: {
+    line1: '630, DLF CYBERCITY, PATIA',
+    line2: 'BHUBANESWAR, ODISHA-751024',
+    full: '630, DLF CYBERCITY, PATIA, BHUBANESWAR, ODISHA-751024'
+  },
+  phone: '(+91) 83288 30398',
+  email: 'info@cohopers.in',
+  location: 'DLF CYBERCITY, BHUBANESWAR, ODISHA'
+};

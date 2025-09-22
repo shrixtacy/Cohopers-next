@@ -72,7 +72,7 @@ export default function LogoCarousel() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="section-padding bg-light-beige overflow-hidden">
+    <section className="section-padding theme-bg-secondary overflow-hidden theme-transition">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,10 +80,10 @@ export default function LogoCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Trusted by leading companies
           </h2>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
             Join hundreds of successful businesses that call our coworking spaces home
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export default function LogoCarousel() {
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="flex-shrink-0 flex flex-col items-center justify-center space-y-3 group cursor-pointer"
                 >
-                  <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center p-4 group-hover:bg-[#004efb] transition-all duration-300 shadow-lg">
+                  <div className="w-24 h-24 theme-bg-primary rounded-lg flex items-center justify-center p-4 group-hover:theme-bg-accent-primary transition-all duration-300 shadow-lg">
                     <Image
                       src={company.logo}
                       alt={company.name}
@@ -120,7 +120,7 @@ export default function LogoCarousel() {
                       className="object-contain max-w-full max-h-full"
                     />
                   </div>
-                  <span className="text-sm font-semibold text-black group-hover:text-[#004efb] transition-colors duration-300">
+                  <span className="text-sm font-semibold theme-text-primary group-hover:theme-accent-primary transition-colors duration-300">
                     {company.name}
                   </span>
                 </motion.div>
@@ -129,8 +129,8 @@ export default function LogoCarousel() {
           </div>
 
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-theme-bg-secondary to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-theme-bg-secondary to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Stats Section */}
@@ -142,15 +142,15 @@ export default function LogoCarousel() {
         >
           <div className="text-center space-y-2">
             <AnimatedCounter end={100} suffix="+" duration={2500} />
-            <div className="text-black font-semibold text-base">Companies</div>
+            <div className="theme-text-primary font-semibold text-base">Companies</div>
           </div>
           <div className="text-center space-y-2">
             <AnimatedCounter end={14000} suffix="+" duration={3000} />
-            <div className="text-black font-semibold text-base">Sq Ft Area</div>
+            <div className="theme-text-primary font-semibold text-base">Sq Ft Area</div>
           </div>
           <div className="text-center space-y-2">
             <AnimatedCounter end={99} suffix="%" duration={2000} />
-            <div className="text-black font-semibold text-base">Satisfaction</div>
+            <div className="theme-text-primary font-semibold text-base">Satisfaction</div>
           </div>
         </motion.div>
       </div>

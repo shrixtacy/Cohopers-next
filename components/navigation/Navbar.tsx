@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingCart, ArrowRight } from 'lucide-react';
-import { navItems } from '@/lib/constants';
+import { navItems, contactInfo } from '@/lib/constants';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,14 +40,14 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-black text-white text-sm py-2">
+      <div className="theme-bg-tertiary theme-text-primary text-sm py-2 theme-transition">
         <div className="container-custom">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <span>help@cohopers.com</span>
+              <span>{contactInfo.email}</span>
             </div>
             <div className="flex items-center gap-4">
-              <span>+92 000 333 9999</span>
+              <span>{contactInfo.phone}</span>
             </div>
           </div>
         </div>
@@ -57,8 +57,8 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          mounted && scrolled ? 'bg-white shadow-lg' : 'bg-white'
+        className={`sticky top-0 z-50 transition-all duration-300 theme-bg-primary theme-text-primary theme-transition ${
+          mounted && scrolled ? 'shadow-lg' : ''
         }`}
       >
         <div className="container-custom">
@@ -70,10 +70,10 @@ export default function Navbar() {
               className="flex-shrink-0"
             >
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#004efb] flex items-center justify-center">
+              <div className="w-10 h-10 theme-bg-accent-primary flex items-center justify-center">
                 <span className="text-white font-bold text-xl">C</span>
               </div>
-              <span className="text-black font-bold text-2xl">ohopers</span>
+              <span className="theme-text-primary font-bold text-2xl">ohopers</span>
             </div>
             </motion.div>
 
@@ -87,7 +87,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-black hover:text-[#00ffe0] px-3 py-2 text-sm font-medium transition-colors duration-200 uppercase tracking-wide"
+                    className="theme-text-primary hover:text-[#00ffe0] px-3 py-2 text-sm font-medium transition-colors duration-200 uppercase tracking-wide"
                   >
                     {item.name}
                   </motion.button>
@@ -101,7 +101,7 @@ export default function Navbar() {
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-black hover:text-[#00ffe0] transition-colors duration-200"
+                className="theme-text-primary hover:text-[#00ffe0] transition-colors duration-200"
               >
                 <ShoppingCart size={24} />
               </motion.button>
@@ -121,7 +121,7 @@ export default function Navbar() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden text-black hover:text-[#00ffe0] transition-colors duration-200"
+                className="lg:hidden theme-text-primary hover:text-[#00ffe0] transition-colors duration-200"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -136,7 +136,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-gray-200"
+              className="lg:hidden theme-bg-primary theme-border-primary border-t theme-transition"
             >
               <div className="px-4 pt-4 pb-6 space-y-2">
                 {navItems.map((item, index) => (
@@ -146,7 +146,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-black hover:text-[#00ffe0] block px-3 py-3 text-base font-medium w-full text-left transition-colors duration-200 uppercase tracking-wide"
+                    className="theme-text-primary hover:text-[#00ffe0] block px-3 py-3 text-base font-medium w-full text-left transition-colors duration-200 uppercase tracking-wide"
                   >
                     {item.name}
                   </motion.button>

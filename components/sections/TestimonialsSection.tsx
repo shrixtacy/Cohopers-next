@@ -6,7 +6,7 @@ import { testimonials } from '@/lib/constants';
 
 export default function TestimonialsSection() {
   return (
-    <section className="section-padding bg-blue-dark text-white">
+    <section className="section-padding theme-bg-tertiary theme-text-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-text-primary mb-8">
             What our community says
           </h2>
         </motion.div>
@@ -35,13 +35,13 @@ export default function TestimonialsSection() {
               className="text-center space-y-8 p-8 rounded-lg hover:bg-white/5 transition-all duration-300 cursor-pointer group"
             >
               <motion.p 
-                className="text-white leading-relaxed text-lg relative"
+                className="theme-text-primary leading-relaxed text-lg relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="text-4xl text-[#004efb] opacity-50 group-hover:opacity-100 transition-opacity duration-300">"</span>
+                <span className="text-4xl theme-accent-primary opacity-50 group-hover:opacity-100 transition-opacity duration-300">"</span>
                 {testimonial.content}
-                <span className="text-4xl text-[#004efb] opacity-50 group-hover:opacity-100 transition-opacity duration-300">"</span>
+                <span className="text-4xl theme-accent-primary opacity-50 group-hover:opacity-100 transition-opacity duration-300">"</span>
               </motion.p>
 
               <div className="flex flex-col items-center space-y-4">

@@ -26,7 +26,7 @@ const blogPosts = [
 
 export default function BlogEventsSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding theme-bg-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -35,10 +35,10 @@ export default function BlogEventsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Check our upcoming events
           </h2>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
             Stay updated with our latest news, events, and community happenings.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export default function BlogEventsSection() {
               
               <div className="space-y-4 p-2">
                 <motion.h3 
-                  className="text-lg font-semibold text-black group-hover:text-[#004efb] transition-colors duration-300"
+                  className="text-lg font-semibold theme-text-primary group-hover:theme-accent-primary transition-colors duration-300"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >

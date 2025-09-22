@@ -15,7 +15,7 @@ const solutions = [
 
 export default function WorkspaceSolutionsSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding theme-bg-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -24,10 +24,10 @@ export default function WorkspaceSolutionsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Flexible workspace solutions
           </h2>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
             Everything you need to succeed in your work, all in one place.
           </p>
         </motion.div>
@@ -46,7 +46,7 @@ export default function WorkspaceSolutionsSection() {
                 rotateY: 5,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="text-center space-y-4 p-8 bg-light-beige rounded-lg hover:bg-[#004efb] hover:text-white transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              className="text-center space-y-4 p-8 theme-bg-secondary rounded-lg hover:theme-bg-accent-primary hover:text-white transition-all duration-300 cursor-pointer group relative overflow-hidden"
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Background gradient on hover */}
@@ -67,7 +67,7 @@ export default function WorkspaceSolutionsSection() {
               >
                 {solution.icon}
               </motion.div>
-              <h3 className="text-base font-semibold text-black group-hover:text-white transition-colors duration-300 relative z-10">
+              <h3 className="text-base font-semibold theme-text-primary group-hover:text-white transition-colors duration-300 relative z-10">
                 {solution.title}
               </h3>
             </motion.div>

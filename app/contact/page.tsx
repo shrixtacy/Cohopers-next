@@ -4,24 +4,25 @@ import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from '@/components/navigation/Navbar';
+import { contactInfo } from '@/lib/constants';
 
-const contactInfo = [
+const contactDetails = [
   {
     icon: <MapPin className="w-6 h-6" />,
     title: 'Address',
-    details: ['123 Business District', 'Mumbai, Maharashtra 400001', 'India'],
+    details: [contactInfo.address.line1, contactInfo.address.line2],
     color: 'text-[#004efb]'
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: 'Phone',
-    details: ['+91 98765 43210', '+91 98765 43211'],
+    details: [contactInfo.phone],
     color: 'text-[#004efb]'
   },
   {
     icon: <Mail className="w-6 h-6" />,
     title: 'Email',
-    details: ['info@cohopers.com', 'support@cohopers.com'],
+    details: [contactInfo.email],
     color: 'text-[#004efb]'
   },
   {
@@ -76,7 +77,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen theme-bg-primary theme-text-primary theme-transition">
       <Navbar />
       
       {/* Hero Section */}
@@ -105,7 +106,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 theme-bg-primary">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -113,31 +114,31 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold theme-text-primary mb-6">
               Get In Touch
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl theme-text-secondary max-w-3xl mx-auto">
               We're here to help you find the perfect workspace solution
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
+            {contactDetails.map((info, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow"
+                className="text-center theme-bg-secondary p-8 rounded-lg hover:shadow-lg transition-shadow theme-transition"
               >
                 <div className={`${info.color} mb-4 flex justify-center`}>
                   {info.icon}
                 </div>
-                <h3 className="text-xl font-bold text-black mb-4">
+                <h3 className="text-xl font-bold theme-text-primary mb-4">
                   {info.title}
                 </h3>
                 {info.details.map((detail, detailIndex) => (
-                  <p key={detailIndex} className="text-gray-600 mb-1">
+                  <p key={detailIndex} className="theme-text-secondary mb-1">
                     {detail}
                   </p>
                 ))}
@@ -148,7 +149,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 theme-bg-secondary">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -156,15 +157,15 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white p-8 rounded-lg shadow-lg"
+              className="theme-bg-primary p-8 rounded-lg shadow-lg theme-transition"
             >
-              <h3 className="text-3xl font-bold text-black mb-6">
+              <h3 className="text-3xl font-bold theme-text-primary mb-6">
                 Send us a Message
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold theme-text-secondary mb-2">
                       Full Name *
                     </label>
                     <input
@@ -177,7 +178,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold theme-text-secondary mb-2">
                       Email *
                     </label>
                     <input
@@ -193,7 +194,7 @@ export default function ContactPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold theme-text-secondary mb-2">
                       Phone
                     </label>
                     <input
@@ -205,7 +206,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold theme-text-secondary mb-2">
                       Company
                     </label>
                     <input
@@ -219,7 +220,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold theme-text-secondary mb-2">
                     I'm interested in
                   </label>
                   <select
@@ -238,7 +239,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold theme-text-secondary mb-2">
                     Message *
                   </label>
                   <textarea
@@ -275,28 +276,28 @@ export default function ContactPage() {
               <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-[#004efb] mx-auto mb-4" />
-                  <p className="text-gray-600">Interactive Map</p>
-                  <p className="text-sm text-gray-500">123 Business District, Mumbai</p>
+                  <p className="theme-text-secondary">Interactive Map</p>
+                  <p className="text-sm text-gray-500">{contactInfo.location}</p>
                 </div>
               </div>
 
               {/* Quick Contact */}
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="text-xl font-bold text-black mb-4">
+              <div className="theme-bg-primary p-6 rounded-lg shadow-lg">
+                <h4 className="text-xl font-bold theme-text-primary mb-4">
                   Quick Contact
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-[#004efb]" />
-                    <span className="text-gray-700">+91 98765 43210</span>
+                    <span className="theme-text-secondary">{contactInfo.phone}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-[#004efb]" />
-                    <span className="text-gray-700">info@cohopers.com</span>
+                    <span className="theme-text-secondary">{contactInfo.email}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#004efb]" />
-                    <span className="text-gray-700">Mon-Sat: 8AM-8PM</span>
+                    <span className="theme-text-secondary">Mon-Sat: 8AM-8PM</span>
                   </div>
                 </div>
               </div>
@@ -306,7 +307,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 theme-bg-primary">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -314,10 +315,10 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold theme-text-primary mb-6">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl theme-text-secondary max-w-3xl mx-auto">
               Find answers to common questions about our coworking spaces
             </p>
           </motion.div>
@@ -329,12 +330,12 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 p-6 rounded-lg"
+                className="theme-bg-secondary p-6 rounded-lg"
               >
-                <h3 className="text-xl font-bold text-black mb-3">
+                <h3 className="text-xl font-bold theme-text-primary mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600">
+                <p className="theme-text-secondary">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -361,7 +362,7 @@ export default function ContactPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#00ffe0] text-black px-12 py-4 text-xl font-bold hover:bg-[#00d4c4] transition-colors flex items-center gap-3 mx-auto"
+              className="bg-[#00ffe0] theme-text-primary px-12 py-4 text-xl font-bold hover:bg-[#00d4c4] transition-colors flex items-center gap-3 mx-auto"
             >
               Book a Tour
               <ArrowRight size={24} />
@@ -372,6 +373,9 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
+
 
 
 

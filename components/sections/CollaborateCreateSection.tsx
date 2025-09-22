@@ -27,7 +27,7 @@ const workspaceTypes = [
 
 export default function CollaborateCreateSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding theme-bg-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -36,12 +36,12 @@ export default function CollaborateCreateSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-[#004efb] text-white px-4 py-2 text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 theme-bg-accent-primary text-white px-4 py-2 text-sm font-semibold mb-6">
             <div className="w-2 h-2 bg-white rounded-full"></div>
             Our New Location Is Now Open
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-black">
+          <h2 className="text-4xl md:text-5xl font-bold theme-text-primary">
             COLLABORATE AND CREATE: YOUR IDEAL WORKSPACE AWAITS
           </h2>
         </motion.div>

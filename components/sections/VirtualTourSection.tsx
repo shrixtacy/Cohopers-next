@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function VirtualTourSection() {
   return (
-    <section className="section-padding bg-light-beige">
+    <section className="section-padding theme-bg-secondary theme-transition">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

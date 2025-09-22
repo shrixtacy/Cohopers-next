@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-light-beige">
+    <section id="home" className="relative min-h-screen flex items-center theme-bg-secondary theme-transition">
       {/* Content Container */}
       <div className="relative z-10 w-full">
         <div className="container-custom">
@@ -24,14 +24,14 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-black leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold theme-text-primary leading-tight">
                 Productivity-first coworking in India — a new way to{' '}
-                <span className="text-[#004efb]">Create</span>
-                <div className="w-1 h-12 bg-[#004efb] mx-auto mt-4"></div>
+                <span className="theme-accent-primary">Create</span>
+                <div className="w-1 h-12 theme-bg-accent-primary mx-auto mt-4"></div>
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-black max-w-4xl mx-auto leading-relaxed">
-                Cohopers is building productivity-forward coworking spaces across India — and soon, the GCC — where professionals thrive in spaces designed for focus and growth.
+              <p className="text-lg md:text-xl lg:text-2xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
+                Cohopers is building productivity-forward coworking spaces in Bhubaneswar — where professionals thrive in spaces designed for focus and growth.
               </p>
             </motion.div>
 

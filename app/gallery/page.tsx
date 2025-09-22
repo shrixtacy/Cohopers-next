@@ -160,7 +160,7 @@ export default function GalleryPage() {
   const handleMouseLeave = () => setIsScrolling(true);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen theme-bg-secondary theme-text-primary theme-transition">
       <Navbar />
       
       {/* Hero Section */}

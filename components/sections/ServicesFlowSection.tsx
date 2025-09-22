@@ -22,7 +22,7 @@ export default function ServicesFlowSection() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding theme-bg-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -31,10 +31,10 @@ export default function ServicesFlowSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Our Services
           </h2>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
             Everything you need to work productively and comfortably in our spaces
           </p>
         </motion.div>
@@ -42,13 +42,13 @@ export default function ServicesFlowSection() {
         {/* 4 Rows of Services */}
         <div className="space-y-0 -mx-8">
           {/* Top line */}
-          <div className="h-0.5 bg-black w-full"></div>
+          <div className="h-0.5 theme-bg-accent-primary w-full"></div>
           
           {serviceRows.map((row, rowIndex) => (
             <div key={rowIndex}>
               <div 
                 className={`py-6 text-center overflow-hidden transition-all duration-500 px-8 ${
-                  hoveredService === row[0].id ? 'bg-[#004efb]' : 'bg-white'
+                  hoveredService === row[0].id ? 'theme-bg-accent-primary' : 'theme-bg-primary'
                 }`}
                 onMouseEnter={() => setHoveredService(row[0].id)}
                 onMouseLeave={() => setHoveredService(null)}
@@ -68,7 +68,7 @@ export default function ServicesFlowSection() {
                   {/* First set of text */}
                   <motion.h3 
                     className={`text-2xl font-semibold whitespace-nowrap transition-all duration-500 ${
-                      hoveredService === row[0].id ? 'text-white' : 'text-[#004efb]'
+                      hoveredService === row[0].id ? 'text-white' : 'theme-accent-primary'
                     }`}
                     animate={{
                       scale: hoveredService === row[0].id ? 1.05 : 1,
@@ -127,7 +127,7 @@ export default function ServicesFlowSection() {
                 </motion.div>
               </div>
               {/* Line between services */}
-              <div className="h-0.5 bg-black w-full"></div>
+              <div className="h-0.5 theme-bg-accent-primary w-full"></div>
             </div>
           ))}
         </div>

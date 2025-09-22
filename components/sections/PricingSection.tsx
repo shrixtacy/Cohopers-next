@@ -58,7 +58,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-white">
+    <section id="pricing" className="section-padding theme-bg-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -67,10 +67,10 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Pricing
           </h2>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed mb-12">
             Choose the perfect workspace solution for your needs. All plans include high-speed internet, 24/7 access, and access to our vibrant community.
           </p>
         </motion.div>
@@ -89,11 +89,11 @@ export default function PricingSection() {
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
               className={`relative group cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-[#004efb] bg-gradient-to-br from-[#004efb]/5 to-white' : 'bg-white border border-gray-200'
+                plan.popular ? 'ring-2 ring-theme-accent-primary bg-gradient-to-br from-theme-accent-primary/5 to-theme-bg-primary' : 'theme-bg-primary border theme-border-primary'
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-[#004efb] text-white px-4 py-1 text-sm font-semibold z-10">
+                <div className="absolute top-0 right-0 theme-bg-accent-primary text-white px-4 py-1 text-sm font-semibold z-10">
                   Most Popular
                 </div>
               )}
@@ -113,20 +113,20 @@ export default function PricingSection() {
                 {/* Content */}
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-black mb-1">{plan.title}</h3>
-                    <p className="text-gray-600 text-sm mb-2">{plan.subtitle}</p>
-                    <p className="text-gray-700 text-sm">{plan.capacity}</p>
+                    <h3 className="text-xl font-bold theme-text-primary mb-1">{plan.title}</h3>
+                    <p className="theme-text-secondary text-sm mb-2">{plan.subtitle}</p>
+                    <p className="theme-text-secondary text-sm">{plan.capacity}</p>
                   </div>
 
                   <div className="space-y-2">
-                    <div className="text-3xl font-bold text-[#004efb]">{plan.price}</div>
-                    <div className="text-gray-600 text-sm">{plan.period}</div>
+                    <div className="text-3xl font-bold theme-accent-primary">{plan.price}</div>
+                    <div className="theme-text-secondary text-sm">{plan.period}</div>
                   </div>
 
                   <ul className="space-y-2">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-[#004efb] rounded-full"></div>
+                      <li key={featureIndex} className="flex items-center gap-2 text-sm theme-text-secondary">
+                        <div className="w-1.5 h-1.5 theme-bg-accent-primary rounded-full"></div>
                         {feature}
                       </li>
                     ))}
@@ -135,7 +135,7 @@ export default function PricingSection() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#004efb] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0038cc] transition-colors"
+                    className="w-full theme-bg-accent-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0038cc] transition-colors"
                   >
                     Get Started
                   </motion.button>

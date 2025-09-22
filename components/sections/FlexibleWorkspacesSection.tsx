@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function FlexibleWorkspacesSection() {
   return (
-    <section className="section-padding bg-white text-black">
+    <section className="section-padding theme-bg-primary theme-text-primary theme-transition">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -14,14 +14,14 @@ export default function FlexibleWorkspacesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#004efb] mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold theme-accent-primary mb-8">
             Our flexible workspaces are designed to be comfortable, so you can focus on what really matters —{' '}
-            <span className="text-black">
+            <span className="theme-text-primary">
               your work
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl theme-text-primary max-w-4xl mx-auto leading-relaxed">
             Experience the perfect blend of productivity and comfort in our modern coworking spaces.
           </p>
         </motion.div>

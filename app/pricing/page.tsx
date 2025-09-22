@@ -438,7 +438,7 @@ const pricingCategories = {
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen theme-bg-primary theme-text-primary theme-transition">
       <Navbar />
       
       {/* Auto-Scroll Hero Section */}

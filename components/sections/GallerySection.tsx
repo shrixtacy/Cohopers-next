@@ -99,7 +99,7 @@ const InteractiveImageCard = ({ image, index }: { image: any; index: number }) =
 
 export default function GallerySection() {
   return (
-    <section className="section-padding bg-light-beige">
+    <section className="section-padding theme-bg-secondary theme-transition">
       <div className="container-custom">
         {/* Three Column Image Gallery */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

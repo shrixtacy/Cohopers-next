@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import LenisProvider from '@/components/providers/LenisProvider';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
@@ -10,8 +11,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Cohopers - Premium Coworking Spaces',
-  description: 'Join a thriving community of entrepreneurs, freelancers, and innovators in our premium coworking spaces. Modern amenities, flexible plans, and networking opportunities.',
+  title: 'Cohopers - Premium Coworking Spaces in Bhubaneswar',
+  description: 'Join a thriving community of entrepreneurs, freelancers, and innovators in our premium coworking spaces at DLF Cybercity, Bhubaneswar. Modern amenities, flexible plans, and networking opportunities.',
 };
 
 export default function RootLayout({
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.className}`}>
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        <ThemeProvider>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

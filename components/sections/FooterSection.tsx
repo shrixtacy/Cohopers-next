@@ -5,6 +5,7 @@ import { ArrowRight, Facebook, Twitter, Instagram, Linkedin, Phone } from 'lucid
 import { ThemeSwitch } from '@/components/ui/theme-switch';
 import { useTheme } from '@/components/providers/ThemeProvider';
 import { contactInfo } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function FooterSection() {
   const { isSystemTheme } = useTheme();
@@ -23,11 +24,14 @@ export default function FooterSection() {
             a way to live. a way to be.
           </h2>
           
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="w-12 h-12 theme-bg-primary flex items-center justify-center">
-              <span className="theme-accent-primary font-bold text-2xl">C</span>
-            </div>
-            <span className="theme-text-primary font-semibold text-2xl">ohopers</span>
+          <div className="flex items-center justify-center mb-8 w-full">
+            <Image
+              src="/images/images/Cohopers_logo.png"
+              alt="Cohopers Logo"
+              width={500}
+              height={100}
+              className="h-20 w-full max-w-2xl object-contain"
+            />
           </div>
         </motion.div>
 

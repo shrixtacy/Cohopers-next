@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingCart, ArrowRight } from 'lucide-react';
 import { navItems, contactInfo } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,11 +70,14 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               className="flex-shrink-0"
             >
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 theme-bg-accent-primary flex items-center justify-center">
-                <span className="text-white font-bold text-xl">C</span>
-              </div>
-              <span className="theme-text-primary font-bold text-2xl">ohopers</span>
+            <div className="flex items-center w-full">
+              <Image
+                src="/images/images/Cohopers_logo.png"
+                alt="Cohopers Logo"
+                width={600}
+                height={80}
+                className="h-16 w-full object-contain"
+              />
             </div>
             </motion.div>
 

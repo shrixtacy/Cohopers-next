@@ -8,11 +8,18 @@ const companies = [
   { name: 'Aarus', logo: '/images/logos/aarus.png' },
   { name: 'ArcelorMittal', logo: '/images/logos/Arcelormittal-logo.svg.png' },
   { name: 'LIC', logo: '/images/logos/LIC.png' },
-  { name: 'PWA', logo: '/images/logos/PWA.png' },
   { name: 'RootAMZ', logo: '/images/logos/rootAMZ.jpeg' },
   { name: 'Stevin Shipping', logo: '/images/logos/Stevin-Shipping.jpg' },
   { name: 'USHA', logo: '/images/logos/USHA_Logo.jpg' },
   { name: 'UTM Technologies', logo: '/images/logos/utm technologies.png' },
+  { name: 'Brio Elevators', logo: '/images/logos/Brio Elevators.png' },
+  { name: 'Datwa Labs', logo: '/images/logos/Datwa-Labs-Logo-White.svg' },
+  { name: 'DSet Consulting', logo: '/images/logos/DSet Consulting logo.webp' },
+  { name: 'Kanika Retails', logo: '/images/logos/Kanika Retails.png' },
+  { name: 'NextGen Homes', logo: '/images/logos/NEXTGEN HOMES.avif' },
+  { name: 'SRQ Real Estate', logo: '/images/logos/srq-realestate.png' },
+  { name: 'SRQ Solutions', logo: '/images/logos/srq-Solutions.svg' },
+  { name: 'UST', logo: '/images/logos/ust-white-logo.svg' },
 ];
 
 // Animated Counter Component
@@ -149,8 +156,8 @@ export default function LogoCarousel() {
             <div className="theme-text-primary font-semibold text-base">Sq Ft Area</div>
           </div>
           <div className="text-center space-y-2">
-            <AnimatedCounter end={99} suffix="%" duration={2000} />
-            <div className="theme-text-primary font-semibold text-base">Satisfaction</div>
+            <AnimatedCounter end={95} suffix="%" duration={2000} />
+            <div className="theme-text-primary font-semibold text-base">Occupancy Rate</div>
           </div>
         </motion.div>
       </div>

@@ -13,8 +13,27 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center theme-bg-secondary theme-transition">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/hero/header.png)'
+        }}
+      />
+      
+      {/* Black blur effects on top and bottom */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Top blur gradient */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/80 to-transparent"></div>
+        {/* Bottom blur gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent"></div>
+      </div>
+      
+      {/* Black transparent overlay */}
+      <div className="absolute inset-0 w-full h-full bg-black/40"></div>
+      
       {/* Content Container */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="container-custom">
           <div className="text-center space-y-12 py-20">
             {/* Main Headline */}
@@ -53,48 +72,6 @@ export default function HeroSection() {
               </motion.button>
             </motion.div>
 
-            {/* Illustration/Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex justify-center mt-16"
-            >
-              <motion.div 
-                className="relative group cursor-pointer"
-                whileHover={{ 
-                  scale: 1.02,
-                  rotateY: 5,
-                  transition: { duration: 0.3, ease: "easeOut" }
-                }}
-                style={{ transformStyle: 'preserve-3d' }}
-              >
-                <div
-                  className="w-full max-w-4xl h-96 bg-cover bg-center rounded-lg shadow-2xl"
-                  style={{
-                    backgroundImage: 'url(/images/hero/header.png)'
-                  }}
-                />
-                
-                {/* Enhanced overlay with hover effect */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-lg"
-                  whileHover={{ 
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent, transparent)',
-                    transition: { duration: 0.3 }
-                  }}
-                />
-                
-                {/* Subtle border glow on hover */}
-                <motion.div
-                  className="absolute inset-0 rounded-lg border-2 border-transparent"
-                  whileHover={{
-                    borderColor: 'rgba(0, 78, 251, 0.3)',
-                    transition: { duration: 0.3 }
-                  }}
-                />
-              </motion.div>
-            </motion.div>
           </div>
         </div>
       </div>

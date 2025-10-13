@@ -13,12 +13,12 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
   useEffect(() => {
     console.log('LoadingAnimation mounted');
     
-    // Simple timer - show for 4 seconds then complete
+    // Simple timer - show for 6 seconds then complete
     const timer = setTimeout(() => {
       console.log('Loading timer completed');
       setIsVisible(false);
       setTimeout(onComplete, 500);
-    }, 4000);
+    }, 6000);
 
     return () => {
       console.log('LoadingAnimation cleanup');
@@ -39,7 +39,7 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 w-full h-full theme-bg-primary"
+          className="fixed inset-0 z-50 w-full h-full theme-bg-primary flex items-center justify-center"
         >
           {/* Video Container - Full Screen */}
           <motion.div 
@@ -60,7 +60,7 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
               onCanPlay={() => console.log('Video can play')}
               onPlay={() => console.log('Video started playing')}
             >
-              <source src="/images/Logo_Animation_Generation_Complete.mp4" type="video/mp4" />
+              <source src="/images/lol.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             

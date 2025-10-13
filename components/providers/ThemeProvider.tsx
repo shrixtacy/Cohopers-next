@@ -14,12 +14,12 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
   const [isSystemTheme, setIsSystemTheme] = useState(false);
 
   useEffect(() => {
-    // Get theme from localStorage or detect system preference
+    // Get theme from localStorage or default to dark
     const savedTheme = localStorage.getItem('theme') as Theme;
     
     if (savedTheme) {
@@ -27,10 +27,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setTheme(savedTheme);
       setIsSystemTheme(false);
     } else {
-      // Detect system theme preference
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(systemPrefersDark ? 'dark' : 'light');
-      setIsSystemTheme(true);
+      // Default to dark theme
+      setTheme('dark');
+      setIsSystemTheme(false);
     }
     
     setMounted(true);
@@ -58,8 +57,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       // Only update if user hasn't manually set a preference
       const savedTheme = localStorage.getItem('theme');
       if (!savedTheme) {
-        setTheme(e.matches ? 'dark' : 'light');
-        setIsSystemTheme(true);
+        // Default to dark theme regardless of system preference
+        setTheme('dark');
+        setIsSystemTheme(false);
       }
     };
 
@@ -77,9 +77,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const resetToSystemTheme = () => {
     localStorage.removeItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(systemPrefersDark ? 'dark' : 'light');
-    setIsSystemTheme(true);
+    // Default to dark theme
+    setTheme('dark');
+    setIsSystemTheme(false);
   };
 
   // Always provide the context, even during SSR

@@ -32,7 +32,7 @@ export default function Home() {
     <main className="min-h-screen theme-bg-primary theme-text-primary theme-transition">
       <Navbar />
       <HeroSection />
-      <LogoCarousel />
+      {/* <LogoCarousel /> */}
       <ServicesFlowSection />
       <JoinCommunitySection />
       <FlexibleWorkspacesSection />

@@ -53,7 +53,7 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
               muted
               loop={false}
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover md:object-cover object-contain"
               onEnded={handleVideoEnd}
               onLoadedData={() => console.log('Video loaded successfully')}
               onError={(e) => console.error('Video failed to load:', e)}

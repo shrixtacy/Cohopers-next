@@ -41,9 +41,9 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-50 w-full h-full theme-bg-primary flex items-center justify-center"
         >
-          {/* Video Container - Full Screen */}
+          {/* Video Container - Responsive sizing */}
           <motion.div 
-            className="relative w-full h-full"
+            className="relative w-full h-full flex items-center justify-center"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export function LoadingAnimation({ onComplete }: LoadingAnimationProps) {
               muted
               loop={false}
               playsInline
-              className="w-full h-full object-cover md:object-cover object-contain"
+              className="w-auto h-[50vh] md:w-full md:h-full object-contain md:object-cover"
               onEnded={handleVideoEnd}
               onLoadedData={() => console.log('Video loaded successfully')}
               onError={(e) => console.error('Video failed to load:', e)}
